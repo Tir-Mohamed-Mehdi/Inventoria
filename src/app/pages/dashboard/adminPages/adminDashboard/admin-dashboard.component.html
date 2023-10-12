@@ -1,0 +1,56 @@
+<main class="admin_dashboard">
+  <aside class="admin_dashboard_sidebar">
+    <img
+      src="../../../../../assets/logo/white_full_logo.svg"
+      alt="app logo"
+      class="admin_dashboard_sidebar_logo"
+    />
+    <ul class="admin_dashboard_sidebar_links">
+      <li
+        *ngFor="let link of adminSidebarLinks"
+        class="admin_dashboard_sidebar_links-link"
+        [routerLink]="link.routeLink"
+        routerLinkActive="active_link"
+      >
+        <mat-icon>{{ link.routeIcon }}</mat-icon>
+        <samp>
+          {{ link.routeLink }}
+        </samp>
+      </li>
+    </ul>
+  </aside>
+
+  <section class="admin_dashboard_outlet">
+    <header class="admin_dashboard_outlet_header">
+      <h1 class="admin_dashboard_outlet_header-title">{{ userRole }}</h1>
+      <button
+        mat-button
+        [matMenuTriggerFor]="menu"
+        color="primary"
+        class="admin_dashboard_outlet_header_btn"
+      >
+        <mat-icon class="admin_dashboard_outlet_header_btn-icon"
+          >person</mat-icon
+        >
+        <span>{{ userName }}</span>
+        <mat-icon iconPositionEnd class="admin_dashboard_outlet_header_btn-icon"
+          >expand_more</mat-icon
+        >
+      </button>
+
+      <mat-menu #menu="matMenu" xPosition="after" class="my-class">
+        <button mat-menu-item>
+          <span class="menu_span">Settings</span>
+          <mat-icon class="menu_icon" iconPositionEnd>settings</mat-icon>
+        </button>
+        <button mat-menu-item color="primary" (click)="logoutUser()">
+          <span class="menu_span logout">Logout</span>
+          <mat-icon iconPositionEnd class="menu_icon logout">
+            power_settings_new
+          </mat-icon>
+        </button>
+      </mat-menu>
+    </header>
+    <router-outlet></router-outlet>
+  </section>
+</main>

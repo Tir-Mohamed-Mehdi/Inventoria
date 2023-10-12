@@ -1,0 +1,17 @@
+<div class="dialog">
+  <h2 mat-dialog-title class="dialog_title">
+    Warning you are trying to logout
+  </h2>
+  <mat-dialog-content class="dialog_text">
+    Are you sure that you want to logout from the application?
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-flat-button mat-dialog-close mat-dialog-close="false">
+      Keep me logged in
+    </button>
+    <button mat-flat-button color="warn" mat-dialog-close="true">
+      Yes, log me out
+    </button>
+  </mat-dialog-actions>
+</div>

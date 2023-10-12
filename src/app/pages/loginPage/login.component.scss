@@ -1,0 +1,92 @@
+@use "@angular/material" as mat;
+@import "../../styles/colors/colorPalette.scss";
+
+.login_container {
+  height: 100%;
+  display: grid;
+  place-items: center;
+
+  background-color: #e3edf1;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #e3edf1 200px
+    ),
+    repeating-linear-gradient(hwb(195 9% 47% / 0.09), hwb(195 9% 47% / 0.3));
+}
+
+.form_container {
+  width: 30%;
+
+  background-color: white;
+
+  padding: 3rem 4rem 1.5rem;
+  border-radius: 0.4rem;
+
+  box-shadow: 0px 7px 20px -7px rgba(23, 107, 135, 0.5);
+}
+
+.form_heade_container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.form_logo {
+  width: calc(2.5rem + 0.390625vw);
+}
+
+.form_header {
+  color: $mainColor_900;
+  font-size: calc(17px + 0.390625vw);
+}
+
+.login_form {
+  @include mat.form-field-density(-4);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 0.9rem;
+}
+
+.form_input_container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem;
+}
+
+.form_btn {
+  width: 6rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  align-self: flex-end;
+}
+
+.copyrights {
+  margin-bottom: 0.3rem;
+  font-size: 0.6rem;
+  text-align: center;
+  color: $grayColor_100;
+}
+
+.copyrights_link {
+  color: $grayColor_100;
+}
+
+.layout {
+  background-color: rgba(88, 88, 88, 0.2);
+  backdrop-filter: blur(4px);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  place-items: center;
+  z-index: 10;
+}

@@ -1,0 +1,44 @@
+<main class="login_container">
+  <div class="form_container">
+    <!----------------------->
+    <div class="form_heade_container">
+      <img
+        src="../../../assets/logo/sub_logo.svg"
+        alt="Inventoria logo"
+        class="form_logo"
+      />
+      <h1 class="form_header">Welcome To INVENTORIA</h1>
+    </div>
+    <!----------------------->
+    <form
+      class="login_form"
+      [formGroup]="logInForm"
+      (ngSubmit)="onSubmitForm()"
+      #formDirective="ngForm"
+    >
+      <div class="form_input_container">
+        <mat-form-field appearance="outline">
+          <mat-label>User Name</mat-label>
+          <input matInput type="text" formControlName="identifier" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" color="primary">
+          <mat-label>User Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+      </div>
+
+      <button mat-flat-button color="primary" class="form_btn">Login</button>
+    </form>
+    <!----------------------->
+    <p class="copyrights">
+      Created by <a class="copyrights_link" href="#">TIR MOHAMED MEHDI</a>
+    </p>
+    <P class="copyrights">All rights reserved 2023®</P>
+    <!----------------------->
+  </div>
+
+  <div class="layout" *ngIf="loading | async">
+    <mat-spinner [diameter]="50"></mat-spinner>
+  </div>
+</main>
